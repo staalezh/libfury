@@ -1,0 +1,11 @@
+# SConstruct file
+
+exploit = Environment()
+exploit['CPPPATH'] = '../../src'
+exploit['LIBPATH'] = '../..'
+exploit['LIBS'] = 'fury'
+
+exploit.Program('exploit', 'exploit.cpp')
+
+vuln = Environment()
+vuln.Program('vuln', 'vuln.cpp')

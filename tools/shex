@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+# SHEX - SHellcode EXtractor
+# TODO: The regex must be fixed.
+
+target = ARGV[0]
+unless target
+  puts "Usage: ./shex [program]"
+  exit 1
+end
+
+io = IO.popen("objdump -d #{target} --section=.text")
+
+shellcode = Array.new
+io.each do |line|
+  if line.match(/^[ \t][0-9,a-f]:*/)
+    shellcode << line.scan(/([0-9,a-f][0-9,a-f]) /)
+  end
+end
+
+shellcode = shellcode.flatten
+shellcode.each do |byte|
+  print "\\x#{byte}"
+end

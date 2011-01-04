@@ -1,0 +1,28 @@
+== Building the source and running the example code ==
+Issue the following in the root directory to build the library source:
+
+$ scons
+
+The example source in the example/ directory can be built in the same way. In
+order to run the example code, you might wanna create a symlink in /usr/lib 
+that points to libfury.so (in the root directory).
+
+You might also want to disable stack smashing protection and ASLR (address
+space layout randomization) since both of these security measurements are
+likely to result in a SIGSEGV-fault when running the exploit. To temporarily
+disable ASLR, issue the following:
+
+$ sudo sysctl kernel.randomize_va_space=0
+
+To disable stack smashing detection, RTFM.
+
+== A note on shellcode ==
+The shellcode found in the src/shellcode directory does not work. Since we're
+extracting the bytes from the text segment of the code, the constant that
+stores the location of the shell we want to spawn is never created, and the
+path variable refers to a bogus memory address.
+
+== Tools ==
+I wrote a simple tool called SHEX (SHellcode EXtractor) that basically parses
+the output of objdump and outputs a C/C++-style string containing the shellcode
+that can be copy-pasted to the source code.

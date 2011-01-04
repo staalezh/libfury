@@ -1,0 +1,10 @@
+# SConstruct file
+
+import glob
+
+env = Environment()
+env['LINK'] = 'ld'
+
+for file in glob.glob("*.s"):
+    print "Building", file, "..."
+    env.Program(file[:-2], file)
