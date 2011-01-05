@@ -1,7 +1,7 @@
 #ifndef _fury_stack_overflow_hpp_
 #define _fury_stack_overflow_hpp_
 
-#include "../types.hpp"
+#include "types.hpp"
 
 #include <iostream>
 #include <string>
