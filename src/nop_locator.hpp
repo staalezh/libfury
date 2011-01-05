@@ -1,10 +1,9 @@
-#ifndef _fury_exploit_nop_locator_hpp_
-#define _fury_exploit_nop_locator_hpp_
+#ifndef _fury_nop_locator_hpp_
+#define _fury_nop_locator_hpp_
 
-#include "../types.hpp"
+#include "types.hpp"
 
 namespace fury {
-namespace exploit {
 
 class nop_locator {
 public:
@@ -17,7 +16,6 @@ private:
     long offset;
 };
 
-} // namespace exploit
 } // namespace fury
 
 #endif

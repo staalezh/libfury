@@ -1,7 +1,6 @@
 #include "nop_locator.hpp"
 
 namespace fury {
-namespace exploit {
 
 nop_locator::nop_locator() : offset(0)
 {
@@ -23,5 +22,4 @@ addr_type32 nop_locator::get_sp() const
 }
 
 
-} // namespace exploit
 } // namespace fury

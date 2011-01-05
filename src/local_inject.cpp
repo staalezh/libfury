@@ -3,7 +3,6 @@
 #include <unistd.h>
 
 namespace fury {
-namespace exploit {
 
 void local_inject::inject(const std::string& buffer) const
 {
@@ -20,5 +19,4 @@ const std::string& local_inject::target() const
     return target_;
 }
 
-} // namespace exploit
 } // namespace fury

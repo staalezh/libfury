@@ -1,5 +1,5 @@
-#ifndef _fury_exploit_stack_overflow_hpp_
-#define _fury_exploit_stack_overflow_hpp_
+#ifndef _fury_stack_overflow_hpp_
+#define _fury_stack_overflow_hpp_
 
 #include "../types.hpp"
 
@@ -8,7 +8,6 @@
 #include <unistd.h>
 
 namespace fury {
-namespace exploit {
 
 template<class AddrLocatorPolicy, class InjectPolicy>
 class stack_overflow : public AddrLocatorPolicy, public InjectPolicy {
@@ -49,7 +48,6 @@ private:
     const int nop_size;
 };
 
-} // namespace exploit
 } // namespace fury
 
 #endif

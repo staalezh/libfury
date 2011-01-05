@@ -1,10 +1,9 @@
-#ifndef _fury_exploit_local_inject_hpp_
-#define _fury_exploit_local_inject_hpp_
+#ifndef _fury_local_inject_hpp_
+#define _fury_local_inject_hpp_
 
 #include <string>
 
 namespace fury {
-namespace exploit {
 
 class local_inject {
 public:
@@ -17,7 +16,6 @@ private:
     std::string target_;
 };
 
-} // namespace exploit
 } // namespace fury
 
 #endif
